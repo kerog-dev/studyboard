@@ -1,0 +1,13 @@
+.timer-controls {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-controls button {
+    /*flex: 1;*/
+    height: 100%;
+    aspect-ratio: 1/1;
+}

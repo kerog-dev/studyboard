@@ -27,6 +27,18 @@ export default function Notes() {
       .then((json) => setNoteData(json));
   }, []);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      fetch("/api/notes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(noteData),
+      });
+    }, 1_000);
+
+    return () => clearTimeout(timeout);
+  }, [noteData]);
+
   console.log("data", noteData);
   const [activeTab, setActiveTab] = useState(tabs[0]);
   return (

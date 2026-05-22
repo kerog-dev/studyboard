@@ -32,7 +32,10 @@ export default function Notes() {
       fetch("/api/notes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(noteData),
+        body: JSON.stringify({
+          subjectName: activeTab,
+          value: noteData[activeTab].content,
+        }),
       });
     }, 1_000);
 

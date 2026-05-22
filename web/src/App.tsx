@@ -1,5 +1,6 @@
 import "./App.css";
 import Clock from "./components/Clock.tsx";
+import Notes from "./components/Notes.tsx";
 import Pomodoro from "./components/Pomodoro.tsx";
 import Weather from "./components/Weather.tsx";
 
@@ -13,7 +14,9 @@ function App() {
       <div className="middle-area">
         <Pomodoro />
       </div>
-      <div className="bottom-area"></div>
+      <div className="bottom-area">
+        <Notes />
+      </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import config from "../config.ts";
+import { config } from "../../../shared/config.ts";
 
 interface WeatherData {
   temp: number;

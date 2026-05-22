@@ -38,6 +38,7 @@ export default function Pomodoro() {
 
   const circumference = 2 * Math.PI * 45;
 
+  // TODO: sync via server
   return (
     <div>
       <div style={{ height: "90%" }}>

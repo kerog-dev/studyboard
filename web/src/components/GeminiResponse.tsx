@@ -5,7 +5,7 @@ import renderMathInElement from "katex/contrib/auto-render";
 import "katex/dist/katex.min.css";
 
 export default function GeminiResponse({ text }: { text: string }) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
     (async () => {
@@ -24,5 +24,5 @@ export default function GeminiResponse({ text }: { text: string }) {
     })();
   }, [text]);
 
-  return <div ref={ref} />;
+  return <span ref={ref} />;
 }

@@ -35,5 +35,8 @@ export async function askAssistant(input: string): Promise<string> {
     },
   );
   const json = await res.json();
+  if (res.status !== 200) {
+    return `(gemini ${res.status}) ${json.error.message}`;
+  }
   return json.candidates[0].content.parts[0].text;
 }

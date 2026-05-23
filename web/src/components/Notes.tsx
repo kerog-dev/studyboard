@@ -1,7 +1,19 @@
 import { useEffect, useState } from "react";
 import { config } from "../../../shared/config.ts";
 
-function SubjectNotes({ name, noteData, setNoteData }) {
+interface NoteData {
+  [key: string]: { content: string };
+}
+
+function SubjectNotes({
+  name,
+  noteData,
+  setNoteData,
+}: {
+  name: string;
+  noteData: NoteData;
+  setNoteData: (d: NoteData) => any;
+}) {
   return (
     <div>
       <p>editing {name}</p>

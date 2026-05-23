@@ -1,6 +1,7 @@
 import express from "express";
 import { DatabaseSync } from "node:sqlite";
 import { config } from "../../shared/config.js";
+import { askAssistant } from "./assistant.js";
 
 const db = new DatabaseSync("studyboard.db");
 db.exec(`
@@ -43,6 +44,19 @@ app.post("/api/notes", (req, res) => {
   const { subjectName, value } = req.body;
   noteUpdateStmt.run(value, subjectName);
   res.send("ok!");
+});
+
+app.get("/api/assistant", async (req, res) => {
+  try {
+    if (typeof req.query.input !== "string") throw "bad input";
+    if (req.query.input === "") {
+      res.json({ ok: true, output: "" });
+      return;
+    }
+    res.json({ ok: true, output: await askAssistant(req.query.input) });
+  } catch (e) {
+    res.json({ ok: false, error: String(e) });
+  }
 });
 
 app.listen(PORT, () => {

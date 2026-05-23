@@ -14,8 +14,30 @@
 
 .topbar {
     display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.topbar-left {
+    display: flex;
     align-items: center;
     gap: 1rem;
+    flex: 1;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.topbar-center {
+    position: absolute;
+    left: 50%;
+    width: 30%;
+    transform: translateX(-50%);
 }
 
 .middle-area {

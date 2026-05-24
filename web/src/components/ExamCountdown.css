@@ -1,0 +1,38 @@
+.exam-countdown {
+    width: 100%;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top {
+    font-size: 7rem;
+    text-align: center;
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.top.clear {
+    color: green;
+}
+
+.top.warning {
+    color: orange;
+}
+
+.top.danger {
+    color: red;
+}
+
+.bottom {
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    vertical-align: middle;
+}

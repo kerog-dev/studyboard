@@ -6,4 +6,5 @@ export const config = {
   },
   subjectNames: [],
   geminiApiKey: "",
+  examDate: new Date(),
 };

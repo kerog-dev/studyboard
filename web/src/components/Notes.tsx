@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { config } from "../../../shared/config.ts";
+import "./Notes.css";
 
 interface NoteData {
   [key: string]: { content: string };
@@ -15,8 +16,7 @@ function SubjectNotes({
   setNoteData: (d: NoteData) => any;
 }) {
   return (
-    <div>
-      <p>editing {name}</p>
+    <div className="subject-notes">
       <textarea
         onChange={(e) => {
           setNoteData({ ...noteData, [name]: { content: e.target.value } });
@@ -57,10 +57,14 @@ export default function Notes() {
   console.log("data", noteData);
   const [activeTab, setActiveTab] = useState(tabs[0]);
   return (
-    <div>
-      <ul>
+    <div className="notes">
+      <ul className="tab-list">
         {tabs.map((tabName) => (
-          <li key={tabName} onClick={() => setActiveTab(tabName)}>
+          <li
+            key={tabName}
+            className={`tab ${tabName === activeTab ? "active" : ""}`}
+            onClick={() => setActiveTab(tabName)}
+          >
             {tabName}
           </li>
         ))}

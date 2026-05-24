@@ -51,3 +51,11 @@
     gap: 1rem;
     height: 30%;
 }
+
+.notes {
+    flex: 2;
+}
+
+.exam-countdown {
+    flex: 1;
+}

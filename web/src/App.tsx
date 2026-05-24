@@ -4,6 +4,7 @@ import Clock from "./components/Clock.tsx";
 import ExamCountdown from "./components/ExamCountdown.tsx";
 import Notes from "./components/Notes.tsx";
 import Pomodoro from "./components/Pomodoro.tsx";
+import Tasklist from "./components/Tasklist.tsx";
 import Weather from "./components/Weather.tsx";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       </div>
       <div className="middle-area">
         <Pomodoro />
+        <Tasklist />
       </div>
       <div className="bottom-area">
         <Notes />

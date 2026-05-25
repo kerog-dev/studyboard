@@ -31,6 +31,7 @@ export default function Tasklist() {
             setNewTask("");
           }
         }}
+        placeholder="Add a new task..."
       />
     </div>
   );

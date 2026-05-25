@@ -34,6 +34,7 @@ export default function Assistant() {
             askAssistant(inputValue).then((output) => setOutputValue(output));
           }
         }}
+        placeholder="Ask your assistant..."
       />
       <div
         className="assistant-results"
